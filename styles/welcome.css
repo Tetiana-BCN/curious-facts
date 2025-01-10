@@ -1,0 +1,121 @@
+/* WELCOME.CSS */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Lobster", serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .welcome-page {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    background-image: url("/assets/catYellow.png");
+    overflow: hidden; 
+  }
+  
+  .welcome-content {
+    text-align: center;
+    width: 100%;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .welcome-content h1 {
+    font-family:"Lobster", serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #c6291e;
+    text-shadow: 2px 2px 5px #be1efe;
+    margin: 10px 0; 
+    padding: 10px;
+    z-index: 2; 
+  }
+  
+  .welcome-container {
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0; 
+  }
+  
+  .welcome-curios {
+    max-width: 100%;
+    object-fit: cover; 
+  }
+  
+  .curios-button {
+    background:#431c53;
+    border: none;
+    padding: 15px 30px;
+    font-family: "lobster", serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e5b80b;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+    z-index: 1; 
+  }
+  
+  .curios-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #e5b80b;
+  }
+  
+  /*Responsive: Ajustes para mobile */
+  @media (max-width: 768px) {
+    .welcome-page {
+      flex-direction: column;
+    }
+  
+    .welcome-content {
+      flex: unset;
+      justify-content: flex-start;
+    }
+  
+    .welcome-content h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  
+    .welcome-container {
+      width: 100%;
+    }
+  
+    .welcome-curios {
+      object-fit: contain; 
+    }
+  
+    .curios-button {
+      margin-bottom: 20px; 
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+
+  
