@@ -6,22 +6,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:,"> 
-    <link rel="stylesheet" href="styles/welcome.css">
+    <link rel="icon" href="assets/iconCat.png"> 
+    <link rel="stylesheet" href="./styles/welcome.css">
     <title>Curios Cats Facts</title>
 </head>
 <body>
+    <main id="root">
           <!--Welcome Page-->  
           <div class="welcome-page" id="welcome-page">
             <div class="welcome-content"> 
-                  <h1 class="h1">Welcome Curios</h1>
+                  <h1 id="title" class="h1">Welcome Curios</h1>
                   <div class="welcome-container">
                       <img src="/assets/catYellow.png" alt="welcome-curios" class="welcome">
                   </div>
             </div> 
               <button id="start-button" class="curios-button">Did you know...🐈‍⬛👽</button>
           </div>
-
-    <script src="apiService.js"></script>
+    </main>
+    <script src="src/apiService.js"></script>
 </body>
 </html>
