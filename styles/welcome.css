@@ -12,28 +12,47 @@ body {
   background-color: #FBCB3B;
 }
 
-/*.welcome-page {
-  background-image: url("/assets/catYellow.png");
-}*/
+.welcome-page {
+  padding: 20px;
+}
 
 .welcome-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.welcome-image {
+  width: 100%;
 }
 
 .welcome-content h1 {
   font-family: "Lobster", serif;
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: bold;
+  text-align: center;
   color: black;
 }
 
-.welcome-container {
-  margin-top: 500px;
-  
+#message-div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px auto;
+  width: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.welcome-curios {
-  
+.welcome-container {
+  margin-top: 100px;
+  width: 100%;
 }
+
 
 .curios-button {
   background: black;
@@ -79,48 +98,35 @@ body {
   box-shadow: 0 0 15px white;
 }
 
-/*Responsive: Ajustes para mobile 
-@media (max-width: 768px) {
-  .welcome-page {
-    flex-direction: column;
-  }
+/* Responsive: Ajustes para mobile  */
+@media (min-width: 768px) {
 
   .welcome-content {
-    flex: unset;
-    justify-content: flex-start;
+    /* margin-bottom: 110px; */
+  }
+  .welcome-content h1 {
+    font-size: 3.5rem;  
   }
 
   .welcome-container {
-    width: 100%;
+    width: 450px;
+    margin: 0 auto;    
   }
 
-  .welcome-curios {
-    object-fit: contain;
-  }
+}
 
-  .curios-button {
-    margin: 20px 0;
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
+  @media (min-width: 520px) and (max-width: 768px) {
 
-  .favorite-button {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-}*/
-
-  /* Ajustes para tablets 
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .favorite-button {
-      bottom: 20px; 
-      font-size: 1.1rem;
-      padding: 12px 20px;
+    .welcome-content {
+      margin-bottom: 100px;
     }
-  
-    .curios-button {
-      font-size: 1.3rem;
-      padding: 12px 20px;
+    .welcome-content h1 {
+      font-size: 3rem;  
     }
-  }*/
+
+    .welcome-container {
+      width: 450px;
+      margin: 0 auto;    
+    }
+    
+  } 
