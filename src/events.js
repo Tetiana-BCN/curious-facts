@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', (_event) => {
     console.log('El botón ha sido clickeado');
     
     messageContainer.classList.add('fade-out');
-    
     await new Promise(resolve => setTimeout(resolve, 500));
-
     messageContainer.innerHTML = '';
 
     const messageDiv = document.createElement('div');
@@ -76,12 +74,12 @@ document.addEventListener('DOMContentLoaded', (_event) => {
 });
 
 async function fetchMessageFromAPI() {
-  try {
-    const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random');
-    const data = await response.json();
-    return data.text; 
-  } catch (error) {
-    console.error('Error al obtener el mensaje de la API:', error);
-    return 'Error al obtener el mensaje';
+    try {
+      const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random');
+      const data = await response.json();
+      return data.text; 
+    } catch (error) {
+      console.error('Error al obtener el mensaje de la API:', error);
+      return 'Error al obtener el mensaje';
+    }
   }
-}
