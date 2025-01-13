@@ -15,7 +15,7 @@
 }
 
 #message-div {
-  background-color: #fac93c;
+  background-color:#fbcb3b;
   color: black;
   padding: 20px;
   border-radius: 10px;
@@ -31,7 +31,7 @@
 
 .fade-in {
   opacity: 1;
-}
+
 
 .addToFavorites,
 .resetButton {
@@ -53,7 +53,6 @@
   box-shadow: 0 0 10px white;
 }
 
-/* Resopnsive design */
 @media (max-width: 768px) {
   #message-div {
     font-size: 1.5rem; 

@@ -120,14 +120,13 @@ body {
   box-shadow: 0 0 15px white;
 }
 
-/*Responsive: Mobile setups */
 @media (max-width: 768px) {
   .welcome-page {
     flex-direction: column;
   }
 
   .welcome-content {
-    /* margin-bottom: 110px; */
+  
   }
   .welcome-content h1 {
     font-size: 3.5rem;  
@@ -166,7 +165,6 @@ body {
   }
 }
 
-/* Tablets setups */
 @media (min-width: 769px) and (max-width: 1024px) {
   .favorite-button {
     bottom: 20px;
