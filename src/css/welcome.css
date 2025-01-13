@@ -43,8 +43,9 @@ body {
   border-radius: 10px;
   text-align: center;
   margin: 20px auto;
-  width: 50%;
+  width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
 .welcome-container {
@@ -112,6 +113,13 @@ body {
     margin: 0 auto;    
   }
 
+  #message-div {
+    font-size: 70px;
+    width: 100%;
+  }
+
+
+
 }
 
   @media (min-width: 520px) and (max-width: 768px) {
@@ -127,5 +135,9 @@ body {
       width: 450px;
       margin: 0 auto;    
     }
-    
+
+    #message-div {
+      font-size: 30px;
+      width: 100%;
+    }
   } 
