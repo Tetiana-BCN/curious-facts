@@ -3,6 +3,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -10,7 +12,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #FBCB3B;
+  background-color: #fbcb3b;
 }
 
 .welcome-page {
@@ -36,6 +38,13 @@ body {
 
 .welcome-image {
   width: 100%;
+  flex: 1;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.welcome-image {
+  width: 100%;
 }
 
 .welcome-content h1 {
@@ -44,6 +53,7 @@ body {
   font-weight: bold;
   text-align: center;
   color: black;
+  text-shadow: 2px 2px 5px white;
 }
 
 #message-div {
@@ -60,6 +70,9 @@ body {
 .welcome-container {
   margin-top: 100px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -107,8 +120,11 @@ body {
   box-shadow: 0 0 15px white;
 }
 
-/* Responsive: Ajustes para mobile  */
-@media (min-width: 768px) {
+/*Responsive: Mobile setups */
+@media (max-width: 768px) {
+  .welcome-page {
+    flex-direction: column;
+  }
 
   .welcome-content {
     /* margin-bottom: 110px; */
@@ -124,27 +140,42 @@ body {
 
   #message-div {
     font-size: 70px;
+    width: 450px;
+    margin: 0 auto;    
+  }
+
+  #message-div {
+    font-size: 70px;
     width: 100%;
   }
 
+  .welcome-curios {
+    object-fit: contain;
+  }
+
+  .curios-button {
+    margin: 20px 0;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .favorite-button {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }
 
-  @media (min-width: 520px) and (max-width: 768px) {
+/* Tablets setups */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .favorite-button {
+    bottom: 20px;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+  }
 
-    .welcome-content {
-      margin-bottom: 100px;
-    }
-    .welcome-content h1 {
-      font-size: 3rem;  
-    }
-
-    .welcome-container {
-      width: 450px;
-      margin: 0 auto;    
-    }
-
-    #message-div {
-      font-size: 30px;
-      width: 100%;
-    }
-  } 
+  .curios-button {
+    font-size: 1.3rem;
+    padding: 12px 20px;
+  }
+}
