@@ -1,69 +1,68 @@
 #message-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    transition: opacity 0.5s ease;
-    z-index: 10; /* Eleva sobre otros elementos */
-    background-color: rgba(255, 255, 255, 0.9); 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-  #message-div {
-    background-color: #fac93c;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+#message-div {
+  background-color: #fac93c;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .fade-out {
-    opacity: 0;
-  }
+.fade-out {
+  opacity: 0;
+}
 
-    .fade-in {
-        opacity: 1;
-    }
+.fade-in {
+  opacity: 1;
+}
 
-  .addToFavorites {
-    background: black;
-    border: none;
-    padding: 10px 20px;
-    font-family: "Lobster", serif;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .addToFavorites:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px white;
-  }
+.addToFavorites {
+  background: black;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Lobster", serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .resetButton {
-    background: black;
-    border: none;
-    padding: 10px 20px;
-    font-family: "Lobster", serif;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+.addToFavorites:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px white;
+}
 
-  .resetButton:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px white;
-  }
- 
+.resetButton {
+  background: black;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Lobster", serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resetButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px white;
+}
