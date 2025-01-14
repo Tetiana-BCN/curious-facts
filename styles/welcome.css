@@ -108,11 +108,15 @@ body {
 }
 
 /* Responsive: Ajustes para mobile  */
-@media (min-width: 768px) {
-
-  .welcome-content {
-    /* margin-bottom: 110px; */
+@media only screen and (max-width: 767px) {
+  #message-div {
+    font-size: 70px;
+    width: 80%;
   }
+}
+
+@media screen and (min-width: 768px) {
+
   .welcome-content h1 {
     font-size: 3.5rem;  
   }
@@ -126,7 +130,6 @@ body {
     font-size: 70px;
     width: 100%;
   }
-
 }
 
   @media (min-width: 520px) and (max-width: 768px) {
