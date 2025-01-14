@@ -3,6 +3,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -36,6 +38,13 @@ body {
 
 .welcome-image {
   width: 100%;
+  flex: 1;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.welcome-image {
+  width: 100%;
 }
 
 .welcome-content h1 {
@@ -45,9 +54,17 @@ body {
   text-align: center;
   color: black;
   text-shadow: 2px 2px 5px white;
-  margin: 10px 0;
-  padding: 10px;
-  z-index: 2;
+}
+
+#message-div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
 .welcome-container {
@@ -103,18 +120,25 @@ body {
   box-shadow: 0 0 15px white;
 }
 
-/*Responsive: Mobile setups */
 @media (max-width: 768px) {
   .welcome-page {
     flex-direction: column;
   }
 
   .welcome-content {
-    flex: unset;
-    justify-content: flex-start;
+  
+  }
+  .welcome-content h1 {
+    font-size: 3.5rem;  
   }
 
   .welcome-container {
+    width: 450px;
+    margin: 0 auto;    
+  }
+
+  #message-div {
+    font-size: 70px;
     width: 450px;
     margin: 0 auto;    
   }
@@ -141,7 +165,6 @@ body {
   }
 }
 
-/* Tablets setups */
 @media (min-width: 769px) and (max-width: 1024px) {
   .favorite-button {
     bottom: 20px;
