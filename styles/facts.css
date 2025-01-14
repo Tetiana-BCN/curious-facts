@@ -15,11 +15,7 @@
 }
 
 #message-div {
-<<<<<<< HEAD
   background-color:white;
-=======
-  background-color:#fbcb3b;
->>>>>>> a029f25719f869ee74ccac3ae0bbc2e709680ae4
   color: black;
   padding: 20px;
   border-radius: 10px;
@@ -35,8 +31,7 @@
 
 .fade-in {
   opacity: 1;
-
-
+}
 .addToFavorites,
 .resetButton {
   background: black;
