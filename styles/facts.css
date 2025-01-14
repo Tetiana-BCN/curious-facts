@@ -5,17 +5,17 @@
   gap: 20px;
   transition: opacity 0.5s ease;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fac93c;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
   position: relative;
   max-height: 80vh;
   overflow-y: auto;
 }
 
 #message-div {
-  background-color: #fac93c;
+  background-color:white;
   color: black;
   padding: 20px;
   border-radius: 10px;
@@ -50,25 +50,28 @@
 .addToFavorites:hover,
 .resetButton:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px white;
+  box-shadow: 0 0 10px #fac93c;
 }
 
 /* Resopnsive design */
 @media (max-width: 768px) {
   #message-div {
     font-size: 1.5rem; 
+    overflow-y: auto;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   #message-div {
     font-size: 1.8rem; 
+    overflow-y: auto;
   }
 }
 
 @media (min-width: 1025px) {
   #message-div {
     font-size: 2rem; 
+    overflow-y: auto;
   }
 }
 
