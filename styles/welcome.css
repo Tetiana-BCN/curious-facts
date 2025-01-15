@@ -94,38 +94,11 @@ body {
   box-shadow: 0 0 15px white;
 }
 
-.favorite-button {
-  background: black;
-  border: none;
-  padding: 15px 30px;
-  font-family: "lobster", serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 20px;
-  z-index: 1;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.favorite-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px white;
-}
-
 @media (max-width: 768px) {
   .welcome-page {
     flex-direction: column;
   }
 
-  .welcome-content {
-  
-  }
   .welcome-content h1 {
     font-size: 3.5rem;  
   }

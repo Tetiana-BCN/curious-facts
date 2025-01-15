@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', (_event) => {
     addToFavoritesButton.className = 'addToFavorites';
     messageContainer.appendChild(addToFavoritesButton);
 
+    const viewFavoritesButton = document.createElement('button');
+    viewFavoritesButton.textContent = '⭐ View Favorites';
+    viewFavoritesButton.className = 'viewFavorites';
+    messageContainer.appendChild(viewFavoritesButton);
+
     const resetButton = document.createElement('button');
     resetButton.textContent = 'Reset';
     resetButton.className = 'resetButton';

@@ -33,6 +33,7 @@
   opacity: 1;
 }
 .addToFavorites,
+.viewFavorites,
 .resetButton {
   background: black;
   border: none;
@@ -47,6 +48,7 @@
 }
 
 .addToFavorites:hover,
+.viewFavorites:hover,
 .resetButton:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px #fac93c;
