@@ -6,25 +6,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:,"> 
+    <link rel="icon" href="assets/iconCat.png"> 
     <link rel="stylesheet" href="styles/welcome.css">
     <link rel="stylesheet" href="styles/facts.css">
-    <title>Curios Fact</title>
+    <title>Curious Cats Fact</title>
 </head>
-<body>
-          <!--Welcome Facts Page-->  
+<body> 
+    <div class="welcome-page" id="welcome-page">
+      <div class="welcome-content"> 
+      <h1 class="h1">Welcome Curios</h1>
+      <h3 class="h3">Did you know...</h3>
+      <button id="start-button" class="curios-button">Start🐈‍⬛👽</button>
+      
+      <div id="message-container"></div>
+    </div>
 
-            <div class="welcome-page" id="welcome-page">
-             <div class="welcome-content"> 
-                <h1 class="h1">Welcome Curios</h1>
-                <h3 class="h3">Did you know...</h3>
-                <button id="start-button" class="curios-button">Start🐈‍⬛👽</button>
-                <div id="message-container"></div>
-              </div>
-               <div class="welcome-container">
-                <img src="/assets/catYellow.jpeg" alt="welcome-curios" class="welcome">
-               </div>
-            </div>
+      <div class="welcome-container">
+      <img src="/assets/catYellow.jpeg" alt="welcome-curios" class="welcome">
+      </div>
+      </div>
             
              <!-- Audio para el efecto de sonido --> 
             <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio>
