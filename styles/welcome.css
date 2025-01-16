@@ -47,7 +47,7 @@ body {
 
 .welcome-content h1 {
   font-family: "Lobster", serif;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
   text-align: center;
   color: black;
@@ -100,7 +100,11 @@ body {
   }
 
   .welcome-content h1 {
-    font-size: 3.5rem;  
+    font-size: 3rem;  
+  }
+
+  h3 {
+    font-size: 1.5rem;
   }
 
   .welcome-container {
@@ -147,4 +151,16 @@ body {
     font-size: 1.3rem;
     padding: 12px 20px;
   }
+  h3 {
+    font-size: 2rem;
+  }
+
+}
+
+@media (min-width: 1024px) {
+ 
+  h3 {
+    font-size: 2rem;
+  }
+  
 }

@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', (_event) => {
   const viewFavoritesButton = document.getElementById('viewFavorites');
   const messageContainer = document.getElementById('message-container');
   const buttonSound = document.getElementById("button-sound");
+  const favoritesContainer = document.getElementById('favorites-container');  // Hidden container for favorites
+  const closeFavoritesButton = document.getElementById('closeFavorites');
 
+  favoritesContainer.style.display = 'none';
 
   startButton.addEventListener('click', async () => {
     buttonSound.play();
@@ -35,7 +38,11 @@ document.addEventListener('DOMContentLoaded', (_event) => {
     resetButton.addEventListener('click', () => {
         messageDiv.textContent = '';
         hideMessage();
+
+        favoritesContainer.style.display = 'none';
     }
+
+    
     );
     messageContainer.appendChild(resetButton);
 
@@ -45,7 +52,10 @@ document.addEventListener('DOMContentLoaded', (_event) => {
 
     const message = await fetchMessageFromAPI();
     messageDiv.textContent = message;
-
+    viewFavoritesButton.addEventListener('click', () => {
+      favoritesContainer.style.display = 'block'; // Show favorites container
+      displayFavorites(); // Display the list of favorites
+    })
     messageContainer.classList.remove('fade-out');
     messageContainer.classList.add('fade-in');
 
@@ -55,7 +65,8 @@ document.addEventListener('DOMContentLoaded', (_event) => {
         const newFavorite = { id: Date.now(), message: messageText };
         favorites.push(newFavorite);
         localStorage.setItem('favorites', JSON.stringify(favorites));
-        alert('Mensaje añadido a favoritos!');
+
+          //alert('Mensaje añadido a favoritos!');
       }
     });
   });
