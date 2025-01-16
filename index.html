@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/iconCat.png"> 
     <link rel="stylesheet" href="styles/welcome.css">
     <link rel="stylesheet" href="styles/facts.css">
@@ -13,24 +13,26 @@
 </head>
 <body> 
     <div class="welcome-page" id="welcome-page">
-      <div class="welcome-content"> 
-      <h1 class="h1">Welcome Curios</h1>
-      <h3 class="h3">Did you know...</h3>
-      <button id="start-button" class="curios-button">Start🐈‍⬛👽</button>
-      
-      <div id="message-container"></div>
-    </div>
+        <div class="welcome-content"> 
+            <h1 class="h1">Welcome Curios</h1>
+            <h3 class="h3">Did you know...</h3>
+            <button id="start-button" class="curios-button">Start🐈‍⬛👽</button>
+            <div id="message-container"></div>
+        </div>
+        <div class="welcome-container">
+            <img src="/assets/catYellow.jpeg" alt="welcome-curios" class="welcome">
+        </div>
 
-      <div class="welcome-container">
-      <img src="/assets/catYellow.jpeg" alt="welcome-curios" class="welcome">
-      </div>
-      </div>
-            
-             <!-- Audio para el efecto de sonido --> 
-            <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio>
-          
-            <script type="module" src="/src/js/apiService.js"></script>
-            <script type="module" src="/src/js/events.js"></script>
-          </body>
-          
+        <div id="favorites-container" style="display: none;">
+            <h1>Favorites</h1>
+            <ul id="favorites-list">
+            </ul>
+        </div>
+    </div>
+    
+    <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio> 
+    
+    <script type="module" src="/src/js/apiService.js"></script>
+    <script type="module" src="/src/js/events.js"></script>
+</body>
 </html>
