@@ -1,21 +1,6 @@
-#message-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  transition: opacity 0.5s ease;
-  z-index: 10;
-  background-color: #fac93c;
-  padding: 20px;
-  border-radius: 10px;
- /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-  position: relative;
-  max-height: 80vh;
-  overflow-y: auto;
-}
 
 #message-div {
-  background-color:white;
+  background-color: white;
   color: black;
   padding: 20px;
   border-radius: 10px;
@@ -32,6 +17,7 @@
 .fade-in {
   opacity: 1;
 }
+
 .addToFavorites,
 .viewFavorites,
 .resetButton {
@@ -45,6 +31,7 @@
   cursor: pointer;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px;
 }
 
 .addToFavorites:hover,
@@ -54,25 +41,63 @@
   box-shadow: 0 0 10px #fac93c;
 }
 
-@media (max-width: 768px) {
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+@media (max-width: 600px) {
+ 
   #message-div {
-    font-size: 1.5rem; 
-    overflow-y: auto;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: auto;
+    margin: 5px;
+  }
+  .addToFavorites,
+  .viewFavorites,
+  .resetButton {
+    font-size: 0.8rem;
+    padding: 8px 16px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
+  
   #message-div {
-    font-size: 1.8rem; 
-    overflow-y: auto;
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .addToFavorites,
+  .viewFavorites,
+  .resetButton {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 }
 
 @media (min-width: 1025px) {
+
   #message-div {
-    font-size: 2rem; 
-    overflow-y: auto;
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+
+  .addToFavorites,
+  .viewFavorites,
+  .resetButton {
+    font-size: 1.2rem;
+    padding: 12px 24px;
   }
 }
-
-
