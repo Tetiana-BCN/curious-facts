@@ -36,7 +36,7 @@ function onPageLoaded() {
     const addToFavoritesButton = document.createElement('button');
     addToFavoritesButton.textContent = '⭐ Add to Favorites';
     addToFavoritesButton.className = 'addToFavorites';
-    messageContainer.appendChild(addToFavoritesButton);
+     messageContainer.appendChild(addToFavoritesButton);
   
     const viewFavoritesButton = document.createElement('button');
     viewFavoritesButton.textContent = '⭐ View Favorites';

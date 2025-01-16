@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="styles/facts.css">
     <title>Curious Cats Fact</title>
 </head>
-<body> 
+<body>
     <div class="welcome-page" id="welcome-page">
-        <div class="welcome-content"> 
-            <h1 class="h1">Welcome Curios</h1>
-            <h3 class="h3">Did you know...</h3>
-            <button id="start-button" class="curios-button">Start🐈‍⬛👽</button>
-            <div id="message-container"></div>
+        <div class="welcome-content">
+            <h1 class="h1">Welcome Curious</h1>
+            <h3 class="h3">Did you know...?</h3>
+            <button type="button" id="start-button" class="curios-button">Start 🐈‍⬛👽</button>
+            <div id="message-container" >
+                            </div>
         </div>
         <div class="welcome-container">
             <img src="/assets/catYellow.jpeg" alt="welcome-curios" class="welcome">
@@ -29,33 +30,8 @@
             </ul>
         </div>
     </div>
-    
-    <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio> 
-    
-    <script type="module" src="/src/js/apiService.js"></script>
+        <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio>
+        <script type="module" src="/src/js/apiService.js"></script>
     <script type="module" src="/src/js/events.js"></script>
 </body>
 </html>
-<body>
-          <!--Welcome Facts Page-->
-
-            <div class="welcome-page" id="welcome-page">
-             <div class="welcome-content">
-                <h1 class="h1">Welcome Curious</h1>
-                <h3 class="h3">Did you know...?</h3>
-                <button type="button" id="start-button" class="curios-button">Start 🐈‍⬛👽</button>
-                <div id="message-container"></div>
-              </div>
-               <div class="welcome-container">
-                <div id="favorites-container">
-                  <ul id="favorites-list"></ul>
-                </div>
-                <img src="/assets/catYellow.jpeg" alt="welcome-curios" class="welcome">
-               </div>
-            </div>
-                         <!-- Audio para el efecto de sonido -->
-            <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio>
-                      <script type="module" src="/src/js/apiService.js"></script>
-            <script type="module" src="/src/js/events.js"></script>
-          </body>
-          </html>

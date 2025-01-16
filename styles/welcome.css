@@ -69,11 +69,15 @@ body {
 @media (max-width: 600px) {
 
   .welcome-content h1 {
-    font-size: 1.5rem;
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
   }
 
   .curios-button {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 10px 20px;
   }
 }
@@ -84,8 +88,12 @@ body {
     font-size: 2.5rem;
   }
 
+  h3 {
+font-size: 2rem;
+  }
+
   .curios-button {
-    font-size: 1.1rem;
+    font-size: 2rem;
     padding: 12px 24px;
   }
 }
@@ -93,20 +101,15 @@ body {
 @media (min-width: 1025px) {
 
   .welcome-content h1 {
-    font-size: 3rem;  
+    font-size: 4rem;  
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .welcome-container {
     width: 450px;
-    margin: 0 auto;
-  }
-
-  #message-div {
-    font-size: 70px;
     margin: 0 auto;
   }
 
@@ -116,7 +119,7 @@ body {
 
   .curios-button {
     margin: 20px 0;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 10px 20px;
   }
 
@@ -125,29 +128,4 @@ body {
     font-size: 1rem;
     padding: 10px 20px;
   }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .favorite-button {
-    bottom: 20px;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-  }
-
-  .curios-button {
-    font-size: 1.3rem;
-    padding: 12px 20px;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-
-}
-
-@media (min-width: 1024px) {
- 
-  h3 {
-    font-size: 2rem;
-  }
-  
 }
