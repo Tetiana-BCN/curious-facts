@@ -9,7 +9,7 @@ function onPageLoaded() {
   const startButton = document.getElementById('start-button');
   const messageContainer = document.getElementById('message-container');
   const buttonSound = document.getElementById("button-sound");
-  const favoritesContainer = document.getElementById('favorites-container');  // Hidden container for favorites
+  const favoritesContainer = document.getElementById('favorites-container');  
   const closeFavoritesButton = document.getElementById('closeFavorites');
 
   const storedFavorites = localStorage.getItem('favorites');
@@ -23,7 +23,7 @@ function onPageLoaded() {
 
   startButton.addEventListener('click', async () => {
     buttonSound.play();
-    // console.log('El botón ha sido clickeado');
+    
     
     messageContainer.classList.add('fade-out');
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -32,6 +32,9 @@ function onPageLoaded() {
     const messageDiv = document.createElement('div');
     messageDiv.id = 'message-div';
     messageContainer.appendChild(messageDiv);
+    const hideMessageDiv = function(messageDiv){
+      messageDiv.style.display= "none";
+    }
   
     const addToFavoritesButton = document.createElement('button');
     addToFavoritesButton.textContent = '⭐ Add to Favorites';
@@ -42,8 +45,8 @@ function onPageLoaded() {
     viewFavoritesButton.textContent = '⭐ View Favorites';
     viewFavoritesButton.className = 'viewFavorites';
     messageContainer.appendChild(viewFavoritesButton);
-  
-    const resetButton = document.createElement('button');
+
+     const resetButton = document.createElement('button');
     resetButton.textContent = 'Reset';
     resetButton.className = 'resetButton';
     resetButton.addEventListener('click', () => {
@@ -71,14 +74,16 @@ function onPageLoaded() {
     const message = await fetchMessageFromAPI();
     messageDiv.textContent = message;
     viewFavoritesButton.addEventListener('click', () => {
-      favoritesContainer.style.display = 'block'; // Show favorites container
-      displayFavorites(); // Display the list of favorites
+      favoritesContainer.style.display = 'block';
+      messageDiv.textContent = '';
+            messageDiv.style.display = "none";
+            displayFavorites();
     })  
     messageContainer.classList.remove('fade-out');
     messageContainer.classList.add('fade-in');
   
     addToFavoritesButton.addEventListener('click', onAddToFavoritesClick);
-    viewFavoritesButton.addEventListener('click', onViewFavoritesClick);
+    //viewFavoritesButton.addEventListener('click', onViewFavoritesClick);
   });
   
   function hideMessage() {
@@ -97,7 +102,7 @@ function onAddToFavoritesClick() {
     localStorage.setItem('favorites', JSON.stringify(favorites));
 
     addToFavoriteList(messageText);
-    // alert('Mensaje añadido a favoritos!');
+    
   }
 }
 
@@ -108,6 +113,7 @@ function onViewFavoritesClick() {
 function showFavorites() {
   const favoritesContainer = document.getElementById('favorites-container');
   favoritesContainer.style.display = 'block';
+  messageDiv.style.display = "none";
 }
 
 function hideFavorites() {
