@@ -73,6 +73,7 @@ function onPageLoaded() {
   
     const message = await fetchMessageFromAPI();
     messageDiv.textContent = message;
+    messageDiv.style.fontSize = '3em';
     viewFavoritesButton.addEventListener('click', () => {
       favoritesContainer.style.display = 'block';
       messageDiv.textContent = '';
