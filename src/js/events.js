@@ -76,6 +76,7 @@ function onPageLoaded() {
     messageDiv.style.fontSize = '3em';
     viewFavoritesButton.addEventListener('click', () => {
       favoritesContainer.style.display = 'block';
+      favoritesContainer.style.fontSize = "2em";
       messageDiv.textContent = '';
             messageDiv.style.display = "none";
             displayFavorites();
@@ -94,6 +95,7 @@ function onPageLoaded() {
   window.onload = hideMessage;
 }
 
+
 function onAddToFavoritesClick() {
   const messageDiv = document.getElementById('message-div');
   const messageText = messageDiv.textContent.trim();
@@ -101,6 +103,21 @@ function onAddToFavoritesClick() {
     const newFavorite = { id: Date.now(), message: messageText };
     favorites.push(newFavorite);
     localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    const dialog = document.createElement("div");
+    dialog.className = "custom-dialog";
+    
+    dialog.textContent = "Message added to favorites!";
+    dialog.style.fontSize = "2rem";
+    document.body.appendChild(dialog);
+    
+
+    
+    
+
+    setTimeout(() => {
+      dialog.remove();
+    }, 3000);
 
     addToFavoriteList(messageText);
     
@@ -138,7 +155,7 @@ async function fetchMessageFromAPI() {
     return data.text; 
   } catch (error) {
     console.error('Error al obtener el mensaje de la API:', error);
-    return 'Error al obtener el mensaje';
+    return 'Failed to get a message';
   }
 }
 

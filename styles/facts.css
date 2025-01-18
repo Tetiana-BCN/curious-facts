@@ -55,6 +55,22 @@
   align-items: center;
   flex-direction: column;}
 
+
+.custom-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px white;
+  font-family: "Lobster", serif;
+  font-size: 1.2em;
+  color: #fac93c;
+  z-index: 1000;
+}
+
 @media (max-width: 600px) {
  
   #message-div {
@@ -65,7 +81,7 @@
   #message-container {
     padding: auto;
     margin: 5px;
-    font-size: 3rem;
+    /*font-size: 3rem;*/
   }
   .addToFavorites,
   .viewFavorites,
@@ -73,6 +89,8 @@
     font-size: 1.5rem;
     padding: 8px 16px;
   }
+
+
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
