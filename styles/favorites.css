@@ -1,4 +1,3 @@
-
 .addToFavorites,
 .viewFavorites,
 .resetButton {
@@ -63,7 +62,7 @@
 
 .favorite-h1 {
   font-family: "Lobster", serif;
-  font-size: 2rem;
+  font-size: 2.8rem;
   color: black;
   text-shadow: 2px 2px 5px white;
   text-align: center;
