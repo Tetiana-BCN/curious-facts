@@ -16,28 +16,27 @@
   </head>
   <body>
     <div class="welcome-page" id="welcome-page">
-      <div class="welcome-content">
-        <h1 class="h1">Welcome Curious</h1>
-        <h2 class="h2">Did you know...?</h2>
-        <button type="button" id="start-button" class="curios-button">
-          Start 🐈‍⬛👽
-        </button>
-        <div id="message-container"></div>
+        <div class="welcome-content">
+          <h1 class="h1">Welcome Curious</h1>
+          <h2 class="h2">Did you know...?</h2>
+          <button type="button" id="start-button" class="curios-button">
+            Start 🐈‍⬛👽
+          </button>
+          <div id="message-container"></div>
+        </div>
+        <div id="favorites-container" style="display: none">
+          <h1 class="favorite-h1">Favorites</h1>
+          <ul id="favorites-list"></ul>
+        
       </div>
-
-      <div class="welcome-img">
-        <img
-          src="/assets/catYellow_sf.png"
-          alt="welcome-curios"
-          class="welcome"
-        />
-      </div>
-
-      <div id="favorites-container" style="display: none">
-        <h1 class="favorite-h1">Favorites</h1>
-        <ul id="favorites-list"></ul>
-      </div>
-    </div>
+        <div class="welcome-img">
+          <img
+            src="/assets/catYellow_sf.png"
+            alt="welcome-curios"
+            class="welcome"
+          />
+        </div>
+  </div>
 
     <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio>
     <script type="module" src="/src/js/apiService.js"></script>

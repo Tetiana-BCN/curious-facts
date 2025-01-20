@@ -1,8 +1,9 @@
+import { fetchMessageFromAPI } from "./apiService.js";
+
 let favorites = [];
 
 document.removeEventListener("DOMContentLoaded", onPageLoaded);
 document.addEventListener("DOMContentLoaded", onPageLoaded);
-
 function onPageLoaded() {
   const startButton = document.getElementById("start-button");
   const messageContainer = document.getElementById("message-container");
@@ -28,7 +29,7 @@ function onPageLoaded() {
     const messageDiv = document.createElement("div");
     messageDiv.id = "message-div";
     messageContainer.appendChild(messageDiv);
-
+  
     const buttonsDiv = document.createElement("div");
     buttonsDiv.id = "buttons-div";
     messageContainer.appendChild(buttonsDiv);
@@ -82,7 +83,6 @@ function onPageLoaded() {
     messageContainer.classList.add("fade-in");
 
     addToFavoritesButton.addEventListener("click", onAddToFavoritesClick);
-    viewFavoritesButton.addEventListener("click", onViewFavoritesClick);
   });
 
   function hideMessage() {
@@ -113,15 +113,6 @@ function onAddToFavoritesClick() {
   }
 }
 
-function onViewFavoritesClick() {
-  showFavorites();
-}
-
-function showFavorites() {
-  const favoritesContainer = document.getElementById("favorites-container");
-  favoritesContainer.style.display = "block";
-}
-
 function hideFavorites() {
   const favoritesContainer = document.getElementById("favorites-container");
   favoritesContainer.style.display = "none";
@@ -132,17 +123,4 @@ function addToFavoriteList(message) {
   const newFavoriteElement = document.createElement("li");
   newFavoriteElement.textContent = message;
   favoritesList.appendChild(newFavoriteElement);
-}
-
-async function fetchMessageFromAPI() {
-  try {
-    const response = await fetch(
-      "https://uselessfacts.jsph.pl/api/v2/facts/random"
-    );
-    const data = await response.json();
-    return data.text;
-  } catch (error) {
-    console.error("Error getting API message:", error);
-    return "Error getting message";
-  }
 }
