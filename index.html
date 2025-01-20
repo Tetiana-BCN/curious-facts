@@ -4,24 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:,"> 
-    <link rel="stylesheet" href="styles/welcome.css">
-    <title>Curios Fact</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/iconCat.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Curious Cats Fact</title>
 </head>
 <body>
-          <!--Welcome Page-->  
-          <div class="welcome-page" id="welcome-page">
-            <div class="welcome-content"> 
-                  <h1 class="h1">Welcome Curios</h1>
-                <button id="start-button" class="curios-button">Did you know...🐈‍⬛👽</button>
-            </div>
-                  <div class="welcome-container">
-                      <img src="/assets/catYellow.png" alt="welcome-curios" class="welcome">
-                      <button id="favorite-button" class="favorite-button">⭐ Favorites</button>
-                    </div>
+    <div class="welcome-page" id="welcome-page">
+        <div class="welcome-content">
+          <h1 class="h1">Welcome Curious</h1>
+          <h2 class="h2">Did you know...?</h2>
+          <button type="button" id="start-button" class="curios-button">
+            Start 🐈‍⬛👽
+          </button>
+          <div id="message-container"></div>
+        </div>
+        <div id="favorites-container" style="display: none">
+          <h1 class="favorite-h1">Favorites</h1>
+          <ul id="favorites-list"></ul>
+        
+      </div>
+        <div class="welcome-img">
+          <img
+            src="/assets/catYellow_sf.png"
+            alt="welcome-curios"
+            class="welcome"
+          />
+        </div>
+  </div>
 
-    <script src="js/app.js"></script>
+        </div>
+        <audio id="button-sound" src="/assets/ringtones-x-files.mp3"></audio>
+        <script type="module" src="/src/js/apiService.js"></script>
+    <script type="module" src="/src/js/events.js"></script>
 </body>
 </html>
+

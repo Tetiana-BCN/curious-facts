@@ -1,197 +1,93 @@
-# curious-facts
-Web Application Curious Facts
+# Curious Cats Facts - Extended Version
 
-Our Web Application allows you to check Curious facts about anything in English and German and then keep and mark them,  if you like it, as favourate.
+## Description
+This enhanced version of the "Curious Cats Facts" application includes additional features such as the ability to add fun facts to a favorites list, play sound effects, and use animations and local storage to enhance the user experience.
 
-Why this project is important: It entertains the client.
+---
 
-How to use it: Check on the interesting facts and then Click on the ones you like to save them as your favourate.
+## Key Features
 
-Area of usage: For school and other educational purposes, language courses and news projects.
+**Interactive Interface**:
+- A button that generates fun facts.
+- Button to add fun facts to a favorites list.
+- Reset button to hide the current messages.
 
+**Favorites**:
+- Ability to save fun facts to favorites using `localStorage`.
+- Dedicated button to view stored favorites.
 
-License 
-No license required.
+**Animations**:
+- Fade-in and fade-out effects to improve message transitions.
 
-Planificación del Proyecto: Curious Facts
+**Sound Effects**:
+- Plays a sound when clicking the start button.
 
-1. División de Fases del Proyecto
+**Error Handling**:
+- Displays a generic error message if the API fails.
 
-***Fase 1: Inicio y Planificación
+---
 
-Duración: 1 día
+## Technologies Used
 
-Tareas:
+- **HTML5**: Basic structure of the project.
+- **CSS3**: Animations and styling.
+- **JavaScript (ES6+)**: Interactive logic, DOM manipulation, and local storage.
+- **External API**: Connects to `https://uselessfacts.jsph.pl/` to fetch fun facts.
 
-Definir el alcance detallado del proyecto y establecer metas claras.
+---
 
-Crear tablero en Trello con las columnas: Backlog, En progreso, Revisión, Hecho.
+## How It Works
 
-Dividir las historias de usuario según los requisitos funcionales.
+### 1. Main Interaction
+- When the page loads, the start button is ready to listen for click events.
+- When clicking **Start🐈‍⬛👽**:
+  1. A sound effect is played.
+  2. A fade-in transition occurs.
+  3. The previous content in the message container is cleared.
+  4. The API is called to fetch a new fun fact.
+  5. The message is displayed on the screen with a fade-in effect.
 
-Asignar roles (Scrum Master y Product Owner).
+### 2. Add to Favorites
+- When clicking the **Add to Favorites** button:
+  1. The current fun fact is saved to a favorites array.
+  2. The array is stored in `localStorage` to persist between sessions.
 
-Configurar repositorio en GitHub con ramas main y dev según el flujo de trabajo GitFlow.
+### 3. View Favorites
+- The **View Favorites** button redirects the user to another page to explore the saved fun facts.
 
+### 4. Reset Messages
+- The **Reset** button clears the message container and hides the corresponding section.
 
-***Fase 2: Diseño y Maquetación (UI/UX)
+---
 
-Duración: 4 días (Sprint 1)
+## How to Run the Project
 
-Tareas:
+1. Clone the repository or download the files.
+2. Make sure you have a local environment set up to serve HTML files, such as Visual Studio Code with Live Server.
+3. Open the `index.html` file in a web browser.
+4. Click the interactive buttons to explore the features:
+   - **Start**: Generates fun facts.
+   - **Add to Favorites**: Saves facts to favorites.
+   - **View Favorites**: Redirects to the favorites page.
 
-Diseñar la interfaz siguiendo Atomic Design.
+---
 
-Crear wireframes y prototipos en Figma.
+## Main Files
 
-Planificar estructura de carpetas y nomenclatura.
+- **`index.html`**: Main structure of the page.
+- **`styles/welcome.css` and `styles/facts.css`**: Interface and animation styles.
+- **`src/js/apiService.js`**: Logic for interacting with the external API.
+- **`src/js/events.js`**: Event handling and local storage management.
 
-Implementar HTML básico (estructura inicial de la SPA).
+---
 
-
-***Fase 3: Desarrollo Front-End
-
-Duración: 6 días (Sprint 1 y Sprint 2)
-
-Tareas:
-
-Implementar el responsive design con CSS (mobile first).
-
-Crear componentes reutilizables siguiendo Atomic Design.
-
-Implementar interacciones del usuario con JavaScript (DOM y Event Handlers).
-
-Configurar llamadas a la API usando Fetch.
-
-Fase 4: Funcionalidades Avanzadas y Optimizaciones
-
-Duración: 3 días (Sprint 2)
-
-Tareas:
-
-Implementar funcionalidad para guardar favoritos.
-
-Agregar animaciones y transiciones.
-
-Validar estructura coherente.
-
-
-***Fase 5: Pruebas y Presentación
-
-Duración: 2 días
-
-Tareas:
-
-Realizar pruebas unitarias y de integración (opcional).
-
-Preparar demo funcional y documentación en el README.
-
-Realizar la presentación final del proyecto.
-
-
-2. Historias de Usuario
-
-Historia 1: Visualización de hechos curiosos
-
-Como usuario,
-quiero ver un hecho curioso en pantalla al entrar a la aplicación,
-para aprender algo interesante de inmediato.
-
-Criterios de aceptación:
-
-La aplicación muestra un hecho curioso al cargar.
-
-Al solicitar un nuevo hecho, el anterior se reemplaza.
-
-Historia 2: Guardar favoritos
-
-Como usuario,
-quiero guardar un hecho curioso en una lista de favoritos,
-para consultarlo después.
-
-Criterios de aceptación:
-
-Existe un botón para guardar hechos.
-
-Los hechos favoritos aparecen en una lista separada.
-
-Historia 3: Responsividad
-
-Como usuario,
-quiero que la aplicación se vea bien en móviles, tablets y desktop,
-para disfrutarla en cualquier dispositivo.
-
-Criterios de aceptación:
-
-El diseño es mobile-first.
-
-La aplicación tiene al menos dos puntos de quiebre adicionales.
-
-3. Herramientas y Tecnologías
-
-Diseño: Figma
-
-Desarrollo: HTML, CSS (SASS opcional), JavaScript.
-
-Gestor de tareas: Trello
-
-Control de versiones: Git / GitHub
-
-Metodología: Scrum + Kanban
-
-4. Estructura de Carpetas
-
-project-root/
-├── assets/
-│      └──images
-|
-├── styles/
-│       ├── welcome.css
-|       └── facts.css
-├── js/
-│   ├── facts.js
-│   └── api.js
-|
-├── index.html
-|
-└── README.md
-
-5. Flujo de Trabajo con Git
-
-Crear ramas para cada funcionalidad (“feature/”):
-
-Ejemplo: feature/api-fetch, feature/responsive-design
-
-Hacer pull requests a la rama dev y realizar code reviews.
-
-Mergear dev a main solo cuando sea estable.
-
-6. Calendario de Sprints
-
-Semana
-
-Actividades
-
-1
-
-Diseño en Figma, estructura inicial del proyecto, maquetación en HTML/CSS.
-
-2
-
-Desarrollo de funcionalidades: API Fetch, favoritos, responsividad.
-
-3
-
-Optimizaciones, pruebas, documentación, presentación final.
-
-7. Definición de Hecho
-
-Un incremento o historia de usuario está hecho cuando:
-
-Pasa las pruebas manuales y/o automáticas.
-
-Está correctamente documentado.
-
-Cumple con los criterios de aceptación definidos.
-
-
+## Example API Response
+The API returns fun facts in JSON format:
+```json
+{
+    "id": "random_id",
+    "text": "Cats sleep for 70% of their lives.",
+    "source": "https://example.com",
+    "language": "en",
+    "permalink": "https://uselessfacts.jsph.pl/random_id"
+}
