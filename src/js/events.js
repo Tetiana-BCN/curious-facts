@@ -4,7 +4,6 @@ let favorites = [];
 
 document.removeEventListener("DOMContentLoaded", onPageLoaded);
 document.addEventListener("DOMContentLoaded", onPageLoaded);
-
 function onPageLoaded() {
   const startButton = document.getElementById("start-button");
   const messageContainer = document.getElementById("message-container");
@@ -30,7 +29,7 @@ function onPageLoaded() {
     const messageDiv = document.createElement("div");
     messageDiv.id = "message-div";
     messageContainer.appendChild(messageDiv);
-
+  
     const buttonsDiv = document.createElement("div");
     buttonsDiv.id = "buttons-div";
     messageContainer.appendChild(buttonsDiv);
@@ -84,7 +83,6 @@ function onPageLoaded() {
     messageContainer.classList.add("fade-in");
 
     addToFavoritesButton.addEventListener("click", onAddToFavoritesClick);
-    viewFavoritesButton.addEventListener("click", onViewFavoritesClick);
   });
 
   function hideMessage() {
@@ -113,15 +111,6 @@ function onAddToFavoritesClick() {
 
     addToFavoriteList(messageText);
   }
-}
-
-function onViewFavoritesClick() {
-  showFavorites();
-}
-
-function showFavorites() {
-  const favoritesContainer = document.getElementById("favorites-container");
-  favoritesContainer.style.display = "block";
 }
 
 function hideFavorites() {
