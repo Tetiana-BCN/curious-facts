@@ -56,8 +56,6 @@ body {
   box-shadow: 0 0 15px white;
 }
 
-/* Responsive Design */
-/*Mobile setups*/
 @media (max-width: 768px) {
   .welcome-page {
     padding: 10px;
@@ -77,7 +75,6 @@ body {
   }
 }
 
-/*Tablet setups*/
 @media (min-width: 769px) and (max-width: 1024px) {
   .welcome-page {
     padding: 20px;
