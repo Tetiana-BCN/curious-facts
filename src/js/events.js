@@ -1,24 +1,31 @@
 import { fetchMessageFromAPI } from "./apiService.js";
+import {
+  initializeFavorites,
+  onAddToFavoritesClick,
+  displayFavorites,
+  resetFavorites,
+} from "./favorites.js";
 
-let favorites = [];
-
-document.removeEventListener("DOMContentLoaded", onPageLoaded);
 document.addEventListener("DOMContentLoaded", onPageLoaded);
+
 function onPageLoaded() {
   const startButton = document.getElementById("start-button");
   const messageContainer = document.getElementById("message-container");
   const buttonSound = document.getElementById("button-sound");
   const favoritesContainer = document.getElementById("favorites-container");
 
-  const storedFavorites = localStorage.getItem("favorites");
-  if (storedFavorites) {
-    favorites = JSON.parse(storedFavorites);
-    for (let fav of favorites) {
-      addToFavoriteList(fav.message);
-    }
-  }
-  favoritesContainer.style.display = "none";
+  const resetButton = document.createElement("button");
+  resetButton.className = "resetButton";
+  resetButton.innerHTML = `<img src="/assets/reset.png" alt="Reset" class="reset-icon"> Reset`;
+  resetButton.addEventListener("click", () => {
+    resetFavorites();
+    messageContainer.innerHTML = "";
+    messageContainer.style.display = "none";
+  });
 
+  initializeFavorites();
+  favoritesContainer.style.display = "none";
+  messageContainer.style.display = "none";
   startButton.addEventListener("click", async () => {
     buttonSound.play();
 
@@ -28,99 +35,45 @@ function onPageLoaded() {
 
     const messageDiv = document.createElement("div");
     messageDiv.id = "message-div";
-    messageContainer.appendChild(messageDiv);
-  
+
     const buttonsDiv = document.createElement("div");
     buttonsDiv.id = "buttons-div";
-    messageContainer.appendChild(buttonsDiv);
 
     const addToFavoritesButton = document.createElement("button");
     addToFavoritesButton.textContent = "⭐ Add to Favorites";
     addToFavoritesButton.className = "addToFavorites";
-    messageContainer.appendChild(addToFavoritesButton);
 
     const viewFavoritesButton = document.createElement("button");
     viewFavoritesButton.textContent = "⭐ View Favorites";
     viewFavoritesButton.className = "viewFavorites";
-    messageContainer.appendChild(viewFavoritesButton);
 
     const resetButton = document.createElement("button");
     resetButton.className = "resetButton";
+    resetButton.innerHTML = `<img src="/assets/reset.png" alt="Reset" class="reset-icon"> Reset`;
 
-    const resetIcon = document.createElement("img");
-    resetIcon.src = "/assets/reset.png";
-    resetIcon.alt = "Reset";
-    resetIcon.className = "reset-icon";
-
-    resetButton.appendChild(resetIcon);
-    resetButton.appendChild(document.createTextNode(" Reset"));
-    resetButton.addEventListener("click", () => {
-      messageDiv.textContent = "";
-      hideMessage();
-      hideFavorites();
-      localStorage.removeItem("favorites");
-      favorites = [];
-      const favoritesList = document.getElementById("favorites-list");
-      if (favoritesList) {
-        favoritesList.innerHTML = "";
-      }
-
-      favoritesContainer.style.display = "none";
+    viewFavoritesButton.addEventListener("click", displayFavorites);
+    addToFavoritesButton.addEventListener("click", async () => {
+      const message = messageDiv.textContent;
+      onAddToFavoritesClick(message);
     });
-    messageContainer.appendChild(resetButton);
+    resetButton.addEventListener("click", () => {
+      resetFavorites();
+      messageContainer.innerHTML = "";
+      messageContainer.style.display = "none";
+    });
 
-    if (messageContainer.style.display === "none") {
-      messageContainer.style.display = "flex";
-    }
+    buttonsDiv.appendChild(addToFavoritesButton);
+    buttonsDiv.appendChild(viewFavoritesButton);
+    buttonsDiv.appendChild(resetButton);
+
+    messageContainer.appendChild(messageDiv);
+    messageContainer.appendChild(buttonsDiv);
 
     const message = await fetchMessageFromAPI();
     messageDiv.textContent = message;
-    viewFavoritesButton.addEventListener("click", () => {
-      favoritesContainer.style.display = "block";
-      displayFavorites();
-    });
+
     messageContainer.classList.remove("fade-out");
     messageContainer.classList.add("fade-in");
-
-    addToFavoritesButton.addEventListener("click", onAddToFavoritesClick);
+    messageContainer.style.display = "flex";
   });
-
-  function hideMessage() {
-    messageContainer.style.display = "none";
-  }
-
-  window.onload = hideMessage;
-}
-
-function onAddToFavoritesClick() {
-  const messageDiv = document.getElementById("message-div");
-  const messageText = messageDiv.textContent.trim();
-  if (messageText) {
-    const newFavorite = { id: Date.now(), message: messageText };
-    favorites.push(newFavorite);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-
-    const dialog = document.createElement("div");
-    dialog.className = "custom-dialog";
-    dialog.textContent = "Message added to favorites!";
-    document.body.appendChild(dialog);
-
-    setTimeout(() => {
-      dialog.remove();
-    }, 3000);
-
-    addToFavoriteList(messageText);
-  }
-}
-
-function hideFavorites() {
-  const favoritesContainer = document.getElementById("favorites-container");
-  favoritesContainer.style.display = "none";
-}
-
-function addToFavoriteList(message) {
-  const favoritesList = document.getElementById("favorites-list");
-  const newFavoriteElement = document.createElement("li");
-  newFavoriteElement.textContent = message;
-  favoritesList.appendChild(newFavoriteElement);
 }
