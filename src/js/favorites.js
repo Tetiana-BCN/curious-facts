@@ -52,4 +52,7 @@ export function resetFavorites() {
     favoritesList.innerHTML = "";
   }
   hideFavorites();
+
+  
+      
 }

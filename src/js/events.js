@@ -1,15 +1,22 @@
 import { fetchMessageFromAPI } from "./apiService.js";
-import { initializeFavorites, onAddToFavoritesClick, displayFavorites, resetFavorites } from "./favorites.js";
 
+let favorites = [];
+
+document.removeEventListener("DOMContentLoaded", onPageLoaded);
 document.addEventListener("DOMContentLoaded", onPageLoaded);
-
 function onPageLoaded() {
   const startButton = document.getElementById("start-button");
   const messageContainer = document.getElementById("message-container");
   const buttonSound = document.getElementById("button-sound");
   const favoritesContainer = document.getElementById("favorites-container");
 
-  initializeFavorites();
+  const storedFavorites = localStorage.getItem("favorites");
+  if (storedFavorites) {
+    favorites = JSON.parse(storedFavorites);
+    for (let fav of favorites) {
+      addToFavoriteList(fav.message);
+    }
+  }
   favoritesContainer.style.display = "none";
 
   startButton.addEventListener("click", async () => {
@@ -22,7 +29,7 @@ function onPageLoaded() {
     const messageDiv = document.createElement("div");
     messageDiv.id = "message-div";
     messageContainer.appendChild(messageDiv);
-
+  
     const buttonsDiv = document.createElement("div");
     buttonsDiv.id = "buttons-div";
     messageContainer.appendChild(buttonsDiv);
@@ -47,7 +54,19 @@ function onPageLoaded() {
 
     resetButton.appendChild(resetIcon);
     resetButton.appendChild(document.createTextNode(" Reset"));
-    resetButton.addEventListener("click", resetFavorites);
+    resetButton.addEventListener("click", () => {
+      messageDiv.textContent = "";
+      hideMessage();
+      hideFavorites();
+      localStorage.removeItem("favorites");
+      favorites = [];
+      const favoritesList = document.getElementById("favorites-list");
+      if (favoritesList) {
+        favoritesList.innerHTML = "";
+      }
+
+      favoritesContainer.style.display = "none";
+    });
     messageContainer.appendChild(resetButton);
 
     if (messageContainer.style.display === "none") {
@@ -56,12 +75,14 @@ function onPageLoaded() {
 
     const message = await fetchMessageFromAPI();
     messageDiv.textContent = message;
-
-    viewFavoritesButton.addEventListener("click", displayFavorites);
-    addToFavoritesButton.addEventListener("click", () => onAddToFavoritesClick(message));
-
+    viewFavoritesButton.addEventListener("click", () => {
+      favoritesContainer.style.display = "block";
+      displayFavorites();
+    });
     messageContainer.classList.remove("fade-out");
     messageContainer.classList.add("fade-in");
+
+    addToFavoritesButton.addEventListener("click", onAddToFavoritesClick);
   });
 
   function hideMessage() {
@@ -69,4 +90,37 @@ function onPageLoaded() {
   }
 
   window.onload = hideMessage;
+}
+
+function onAddToFavoritesClick() {
+  const messageDiv = document.getElementById("message-div");
+  const messageText = messageDiv.textContent.trim();
+  if (messageText) {
+    const newFavorite = { id: Date.now(), message: messageText };
+    favorites.push(newFavorite);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    const dialog = document.createElement("div");
+    dialog.className = "custom-dialog";
+    dialog.textContent = "Message added to favorites!";
+    document.body.appendChild(dialog);
+
+    setTimeout(() => {
+      dialog.remove();
+    }, 3000);
+
+    addToFavoriteList(messageText);
+  }
+}
+
+function hideFavorites() {
+  const favoritesContainer = document.getElementById("favorites-container");
+  favoritesContainer.style.display = "none";
+}
+
+function addToFavoriteList(message) {
+  const favoritesList = document.getElementById("favorites-list");
+  const newFavoriteElement = document.createElement("li");
+  newFavoriteElement.textContent = message;
+  favoritesList.appendChild(newFavoriteElement);
 }
